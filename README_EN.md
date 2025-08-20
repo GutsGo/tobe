@@ -1,4 +1,4 @@
-# Topguys - A Psychology-Driven Focus Application
+# ToBE - A Psychology-Driven Focus Application
 
 A self-control training tool based on the Chained Time-Delay Protocol (CTDP) theory, designed to help users build powerful habit chains through the "Sacred Seat Principle," the "Principle of Precedent," and the "Linear Time-Delay Principle."
 For more details, please see:
@@ -9,7 +9,7 @@ You can also read this README on Zhihu: https://zhuanlan.zhihu.com/p/19325300067
 
 ## 🎯 Core Concept
 
-Topguys is based on the Chained Time-Delay Protocol (CTDP) theory proposed by Edmond on Zhihu, which uses a mathematical model to solve self-control problems:
+ToBE is based on the Chained Time-Delay Protocol (CTDP) theory proposed by Edmond on Zhihu, which uses a mathematical model to solve self-control problems:
 
 $I = \int_{0}^{\infty} V(\tau) \cdot W(\tau) d\tau$
 
@@ -49,7 +49,7 @@ This principle overcomes the difficulty of getting started by using a "pre-commi
 <img width="911" height="890" alt="image" src="https://github.com/user-attachments/assets/247aec14-ec69-4fc7-aa14-112632814ca8" />
 
 ## Use It Directly
-https://topguysctdp.netlify.app/
+https://tobectdp.netlify.app/
 <img width="1806" height="1218" alt="image" src="https://github.com/user-attachments/assets/6dcd2b1b-3cc8-4cc1-8e8c-57a2f97b1878" />
 
 
@@ -110,8 +110,8 @@ When you need to interrupt a task:
 
 1.  **Clone the project**
 ```bash
-git clone https://github.com/GutsGo/topguys
-cd topguys
+git clone https://github.com/GutsGo/tobe
+cd tobe
 ```
 
 2.  **Install dependencies**

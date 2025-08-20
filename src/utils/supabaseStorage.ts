@@ -1055,7 +1055,7 @@ export class SupabaseStorage {
     // 由于Supabase后端可能没有task_time_stats表，我们使用localStorage作为后备
     // 这确保了功能的兼容性
     try {
-      const data = localStorage.getItem('topguys_task_time_stats');
+      const data = localStorage.getItem('tobe_task_time_stats');
       if (!data) return [];
       return JSON.parse(data);
     } catch (error) {
@@ -1067,7 +1067,7 @@ export class SupabaseStorage {
   async saveTaskTimeStats(stats: import('../types').TaskTimeStats[]): Promise<void> {
     // 使用localStorage作为后备存储
     try {
-      localStorage.setItem('topguys_task_time_stats', JSON.stringify(stats));
+      localStorage.setItem('tobe_task_time_stats', JSON.stringify(stats));
     } catch (error) {
       console.warn('保存任务用时统计失败:', error);
     }

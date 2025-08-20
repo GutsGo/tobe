@@ -38,8 +38,8 @@ export const AuthForm: React.FC = () => {
           <div className="w-20 h-20 rounded-3xl gradient-primary flex items-center justify-center mx-auto mb-6 shadow-2xl">
             <i className="fas fa-rocket text-white text-2xl"></i>
           </div>
-          <h1 className="text-4xl font-bold font-chinese text-gray-900 dark:text-slate-100 mb-2">
-            Topguys
+          <h1 className="text-5xl font-bold font-chinese text-gray-900 dark:text-slate-100 mb-2">
+            🆃🅾🅱🅴
           </h1>
           <p className="text-gray-600 dark:text-slate-400 font-mono text-sm tracking-wider">
             CTDP PROTOCOL

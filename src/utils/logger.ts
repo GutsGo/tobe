@@ -1,5 +1,5 @@
 /**
- * Comprehensive logging system for Topguys application
+ * Comprehensive logging system for ToBE application
  */
 
 export enum LogLevel {

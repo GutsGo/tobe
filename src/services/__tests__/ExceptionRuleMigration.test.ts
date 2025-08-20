@@ -53,7 +53,7 @@ describe('ExceptionRuleMigrationService', () => {
 
     test('已经迁移过的数据应该返回false', async () => {
       // Set migration info
-      localStorage.setItem('topguys_exception_rules_migration', JSON.stringify({
+      localStorage.setItem('tobe_exception_rules_migration', JSON.stringify({
         version: '1.0.0',
         migratedAt: new Date().toISOString(),
         totalRules: 5,
@@ -254,7 +254,7 @@ describe('ExceptionRuleMigrationService', () => {
   describe('迁移验证', () => {
     test('应该验证迁移结果', async () => {
       // Set migration info
-      localStorage.setItem('topguys_exception_rules_migration', JSON.stringify({
+      localStorage.setItem('tobe_exception_rules_migration', JSON.stringify({
         version: '1.0.0',
         migratedAt: new Date().toISOString(),
         totalRules: 2,
@@ -290,7 +290,7 @@ describe('ExceptionRuleMigrationService', () => {
 
     test('应该检测数据不一致', async () => {
       // Set migration info with different count
-      localStorage.setItem('topguys_exception_rules_migration', JSON.stringify({
+      localStorage.setItem('tobe_exception_rules_migration', JSON.stringify({
         version: '1.0.0',
         migratedAt: new Date().toISOString(),
         totalRules: 3, // 期望3个，但实际只有2个
@@ -325,7 +325,7 @@ describe('ExceptionRuleMigrationService', () => {
   describe('迁移回滚', () => {
     test('应该能够回滚迁移', async () => {
       // Set migration info
-      localStorage.setItem('topguys_exception_rules_migration', JSON.stringify({
+      localStorage.setItem('tobe_exception_rules_migration', JSON.stringify({
         version: '1.0.0',
         migratedAt: new Date().toISOString(),
         totalRules: 2,
@@ -354,7 +354,7 @@ describe('ExceptionRuleMigrationService', () => {
       expect(result.success).toBe(true);
       expect(result.deletedRules).toBe(2);
       expect(mockRuleManager.deleteRule).toHaveBeenCalledTimes(2);
-      expect(localStorage.getItem('topguys_exception_rules_migration')).toBeNull();
+      expect(localStorage.getItem('tobe_exception_rules_migration')).toBeNull();
     });
 
     test('没有迁移记录时应该返回失败', async () => {
@@ -369,7 +369,7 @@ describe('ExceptionRuleMigrationService', () => {
   describe('迁移报告', () => {
     test('应该生成完整的迁移报告', async () => {
       // Set migration info
-      localStorage.setItem('topguys_exception_rules_migration', JSON.stringify({
+      localStorage.setItem('tobe_exception_rules_migration', JSON.stringify({
         version: '1.0.0',
         migratedAt: new Date().toISOString(),
         totalRules: 2,

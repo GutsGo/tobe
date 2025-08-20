@@ -167,7 +167,7 @@ export const Dashboard: React.FC<DashboardProps> = React.memo(({
             </div>
             <div>
               <h1 className="text-5xl md:text-6xl font-bold font-chinese text-gray-900 dark:text-slate-100">
-                🆃🅾🅿🅶🆄🆈🆂
+                🆃🅾🅱🅴
               </h1>
             </div>
           </div>

@@ -1,4 +1,4 @@
-# Topguys 项目部署指南
+# ToBE 项目部署指南
 
 ## 🚀 快速部署
 
@@ -43,10 +43,10 @@
 
 ## 📋 项目信息
 
-- **项目名称**: topguysctdp
-- **生产环境URL**: https://topguysctdp.netlify.app
-- **管理面板**: https://app.netlify.com/projects/topguysctdp
-- **GitHub仓库**: https://github.com/KenXiao1/topguys
+- **项目名称**: tobectdp
+- **生产环境URL**: https://tobectdp.netlify.app
+- **管理面板**: https://app.netlify.com/projects/tobectdp
+- **GitHub仓库**: https://github.com/KenXiao1/tobe
 
 ## ⚙️ 环境变量
 
@@ -104,4 +104,4 @@
 
 如有问题，请联系：
 - 邮箱: kenx@andrew.cmu.edu
-- GitHub: https://github.com/KenXiao1/topguys
+- GitHub: https://github.com/KenXiao1/tobe

@@ -1,5 +1,5 @@
 /*
-  # Topguys CTDP Application Database Schema
+  # ToBE CTDP Application Database Schema
 
   1. New Tables
     - `chains`
