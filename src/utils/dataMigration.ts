@@ -248,7 +248,7 @@ export class DataMigrationManager {
     try {
       // 清理过期的计时器持久化数据
       const keys = Object.keys(localStorage);
-      const timerKeys = keys.filter(key => key.startsWith('momentum_timer_'));
+      const timerKeys = keys.filter(key => key.startsWith('topguys_timer_'));
       const now = Date.now();
 
       timerKeys.forEach(key => {

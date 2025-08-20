@@ -42,7 +42,7 @@ time_limit_hours    | integer                     | YES
 ```
 
 ### 4. 重新加载应用
-刷新你的 Momentum 应用，现在回收箱功能应该完全可用了！
+刷新你的 Topguys 应用，现在回收箱功能应该完全可用了！
 
 ## 🎉 修复后的功能
 

@@ -31,7 +31,7 @@ interface ErrorInfo {
 
 export class ErrorRecoveryManager {
   private static readonly MAX_ERROR_HISTORY = 50;
-  private static readonly ERROR_HISTORY_KEY = 'momentum_error_history';
+  private static readonly ERROR_HISTORY_KEY = 'topguys_error_history';
   
   private errorHistory: ErrorInfo[] = [];
 
@@ -216,7 +216,7 @@ export class ErrorRecoveryManager {
           case ExceptionRuleError.RULE_NOT_FOUND:
             // 尝试刷新缓存
             if (typeof window !== 'undefined' && 'caches' in window) {
-              await caches.delete('momentum-cache');
+              await caches.delete('topguys-cache');
             }
             return true;
         }

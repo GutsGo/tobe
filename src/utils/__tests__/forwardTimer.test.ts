@@ -172,7 +172,7 @@ describe('ForwardTimerManager', () => {
       
       // 验证localStorage.setItem被调用
       expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
-        `momentum_timer_${sessionId}`,
+        `topguys_timer_${sessionId}`,
         expect.stringContaining(sessionId)
       );
     });
@@ -198,8 +198,8 @@ describe('ForwardTimerManager', () => {
 
     test('应该能够清理过期的持久化数据', () => {
       const keys = [
-        'momentum_timer_session1',
-        'momentum_timer_session2',
+        'topguys_timer_session1',
+        'topguys_timer_session2',
         'other_key'
       ];
       
@@ -218,17 +218,17 @@ describe('ForwardTimerManager', () => {
       });
       
       mockLocalStorage.getItem.mockImplementation((key: string) => {
-        if (key === 'momentum_timer_session1') return expiredData;
-        if (key === 'momentum_timer_session2') return validData;
+        if (key === 'topguys_timer_session1') return expiredData;
+        if (key === 'topguys_timer_session2') return validData;
         return null;
       });
       
       timerManager.cleanupExpiredStates();
       
       // 应该删除过期数据
-      expect(mockLocalStorage.removeItem).toHaveBeenCalledWith('momentum_timer_session1');
+      expect(mockLocalStorage.removeItem).toHaveBeenCalledWith('topguys_timer_session1');
       // 不应该删除有效数据
-      expect(mockLocalStorage.removeItem).not.toHaveBeenCalledWith('momentum_timer_session2');
+      expect(mockLocalStorage.removeItem).not.toHaveBeenCalledWith('topguys_timer_session2');
     });
   });
 

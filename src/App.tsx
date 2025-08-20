@@ -35,6 +35,8 @@ function App() {
     rsipNodes: [],
     rsipMeta: {},
     taskTimeStats: [],
+    exceptionRules: [],
+    ruleUsageRecords: []
   });
 
   const [showAuxiliaryJudgment, setShowAuxiliaryJudgment] = useState<string | null>(null);

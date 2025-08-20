@@ -62,7 +62,7 @@ describe('Storage TaskTimeStats Functions', () => {
       storage.saveTaskTimeStats(mockStats);
       
       expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
-        'momentum_task_time_stats',
+        'topguys_task_time_stats',
         JSON.stringify(mockStats)
       );
     });
@@ -133,7 +133,7 @@ describe('Storage TaskTimeStats Functions', () => {
       ];
       
       expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
-        'momentum_task_time_stats',
+        'topguys_task_time_stats',
         JSON.stringify(expectedStats)
       );
     });
@@ -164,7 +164,7 @@ describe('Storage TaskTimeStats Functions', () => {
       ];
       
       expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
-        'momentum_task_time_stats',
+        'topguys_task_time_stats',
         JSON.stringify(expectedStats)
       );
     });
@@ -195,7 +195,7 @@ describe('Storage TaskTimeStats Functions', () => {
       ];
       
       expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
-        'momentum_task_time_stats',
+        'topguys_task_time_stats',
         JSON.stringify(expectedStats)
       );
     });
@@ -264,13 +264,13 @@ describe('Storage TaskTimeStats Functions', () => {
       // Mock getCompletionHistory 和 getChains
       let getCompletionHistoryCallCount = 0;
       mockLocalStorage.getItem.mockImplementation((key: string) => {
-        if (key === 'momentum_completion_history') {
+        if (key === 'topguys_completion_history') {
           return JSON.stringify(mockHistory.map(h => ({
             ...h,
             completedAt: h.completedAt.toISOString()
           })));
         }
-        if (key === 'momentum_chains') {
+        if (key === 'topguys_chains') {
           return JSON.stringify(mockChains.map(c => ({
             ...c,
             createdAt: new Date().toISOString()
@@ -283,13 +283,13 @@ describe('Storage TaskTimeStats Functions', () => {
 
       // 应该保存更新后的历史记录
       expect(mockLocalStorage.setItem).toHaveBeenCalledWith(
-        'momentum_completion_history',
+        'topguys_completion_history',
         expect.stringContaining('actualDuration')
       );
 
       // 验证保存的数据包含正确的迁移值
       const saveCall = mockLocalStorage.setItem.mock.calls.find(
-        call => call[0] === 'momentum_completion_history'
+        call => call[0] === 'topguys_completion_history'
       );
       
       if (saveCall) {
@@ -320,13 +320,13 @@ describe('Storage TaskTimeStats Functions', () => {
       ];
 
       mockLocalStorage.getItem.mockImplementation((key: string) => {
-        if (key === 'momentum_completion_history') {
+        if (key === 'topguys_completion_history') {
           return JSON.stringify(mockHistory.map(h => ({
             ...h,
             completedAt: h.completedAt.toISOString()
           })));
         }
-        if (key === 'momentum_chains') {
+        if (key === 'topguys_chains') {
           return JSON.stringify([]);
         }
         return null;
@@ -336,7 +336,7 @@ describe('Storage TaskTimeStats Functions', () => {
 
       // 由于没有需要迁移的数据，不应该调用 setItem
       expect(mockLocalStorage.setItem).not.toHaveBeenCalledWith(
-        'momentum_completion_history',
+        'topguys_completion_history',
         expect.any(String)
       );
     });

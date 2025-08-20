@@ -1,5 +1,5 @@
 /**
- * Comprehensive logging system for Momentum application
+ * Comprehensive logging system for Topguys application
  */
 
 export enum LogLevel {

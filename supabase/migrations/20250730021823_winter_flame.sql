@@ -1,5 +1,5 @@
 /*
-  # Momentum CTDP Application Database Schema
+  # Topguys CTDP Application Database Schema
 
   1. New Tables
     - `chains`

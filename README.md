@@ -1,5 +1,5 @@
 [EN README](./README_EN.md)
-# Momentum - 心理学驱动的专注力应用
+# Topguys - 心理学驱动的专注力应用
 
 基于链式时延协议（CTDP）理论的自控力训练工具，通过"神圣座位原理"、"下必为例原理"和"线性时延原理"帮助用户建立强大的习惯链条。
 详情请见：
@@ -10,9 +10,9 @@ https://www.zhihu.com/question/19888447/answer/1930799480401293785
 
 ## 🎯 核心理念
 
-Momentum基于Edmond在知乎上提出的链式时延协议（Chained Time-Delay Protocol, CTDP）理论，通过数学模型解决自制力问题：
+Topguys基于Edmond在知乎上提出的链式时延协议（Chained Time-Delay Protocol, CTDP）理论，通过数学模型解决自制力问题：
 
-$$I = \int_{0}^{\infty} V(\tau) \cdot W(\tau) d\tau$$
+$I = \int_{0}^{\infty} V(\tau) \cdot W(\tau) d\tau$
 
 
 其中：
@@ -49,7 +49,7 @@ $$I = \int_{0}^{\infty} V(\tau) \cdot W(\tau) d\tau$$
 - 利用时间延迟降低启动阻力<img width="911" height="890" alt="image" src="https://github.com/user-attachments/assets/247aec14-ec69-4fc7-aa14-112632814ca8" />
 
 ## 直接使用
-https://momentumctdp.netlify.app/
+https://topguysctdp.netlify.app/
 <img width="1806" height="1218" alt="image" src="https://github.com/user-attachments/assets/6dcd2b1b-3cc8-4cc1-8e8c-57a2f97b1878" />
 
 
@@ -106,8 +106,8 @@ https://momentumctdp.netlify.app/
 
 1. **克隆项目**
 ```bash
-git clone https://github.com/KenXiao1/momentum.git
-cd momentum
+git clone https://github.com/GutsGo/topguys
+cd topguys
 ```
 
 2. **安装依赖**

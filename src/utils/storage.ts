@@ -1,13 +1,13 @@
 import { Chain, DeletedChain, ScheduledSession, ActiveSession, CompletionHistory, RSIPNode, RSIPMeta, TaskTimeStats } from '../types';
 
 const STORAGE_KEYS = {
-  CHAINS: 'momentum_chains',
-  SCHEDULED_SESSIONS: 'momentum_scheduled_sessions',
-  ACTIVE_SESSION: 'momentum_active_session',
-  COMPLETION_HISTORY: 'momentum_completion_history',
-  RSIP_NODES: 'momentum_rsip_nodes',
-  RSIP_META: 'momentum_rsip_meta',
-  TASK_TIME_STATS: 'momentum_task_time_stats',
+  CHAINS: 'topguys_chains',
+  SCHEDULED_SESSIONS: 'topguys_scheduled_sessions',
+  ACTIVE_SESSION: 'topguys_active_session',
+  COMPLETION_HISTORY: 'topguys_completion_history',
+  RSIP_NODES: 'topguys_rsip_nodes',
+  RSIP_META: 'topguys_rsip_meta',
+  TASK_TIME_STATS: 'topguys_task_time_stats',
 };
 
 export const storage = {

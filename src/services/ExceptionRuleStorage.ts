@@ -13,8 +13,8 @@ import {
 } from '../types';
 
 export class ExceptionRuleStorageService {
-  private static readonly STORAGE_KEY = 'momentum_exception_rules';
-  private static readonly USAGE_RECORDS_KEY = 'momentum_rule_usage_records';
+  private static readonly STORAGE_KEY = 'topguys_exception_rules';
+  private static readonly USAGE_RECORDS_KEY = 'topguys_rule_usage_records';
 
   /**
    * 获取所有例外规则

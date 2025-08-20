@@ -46,7 +46,7 @@ export const FocusMode: React.FC<FocusModeProps> = ({
   // 中断确认对话框状态
   const [showInterruptDialog, setShowInterruptDialog] = useState(false);
   // 暂停后自动恢复
-  const AUTO_RESUME_STORAGE_KEY = 'momentum_auto_resume';
+  const AUTO_RESUME_STORAGE_KEY = 'topguys_auto_resume';
   const [autoResumeAt, setAutoResumeAt] = useState<number | null>(null);
   const [resumeCountdown, setResumeCountdown] = useState<number>(0);
   const [elapsedPauseTime, setElapsedPauseTime] = useState<number>(0);

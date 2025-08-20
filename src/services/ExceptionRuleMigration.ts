@@ -25,7 +25,7 @@ export interface MigrationProgress {
 }
 
 export class ExceptionRuleMigrationService {
-  private static readonly MIGRATION_KEY = 'momentum_exception_rules_migration';
+  private static readonly MIGRATION_KEY = 'topguys_exception_rules_migration';
   private static readonly MIGRATION_VERSION = '1.0.0';
 
   /**

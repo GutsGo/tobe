@@ -166,16 +166,13 @@ export const Dashboard: React.FC<DashboardProps> = React.memo(({
               <i className="fas fa-rocket text-white text-xl"></i>
             </div>
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold font-chinese text-gray-900 dark:text-slate-100 mb-2">
-                Momentum
+              <h1 className="text-5xl md:text-6xl font-bold font-chinese text-gray-900 dark:text-slate-100">
+                🆃🅾🅿🅶🆄🆈🆂
               </h1>
-              <p className="text-sm font-mono text-gray-600 dark:text-slate-400 tracking-wider uppercase">
-                CTDP Protocol
-              </p>
             </div>
           </div>
           
-          <p className="text-gray-700 dark:text-slate-300 max-w-3xl mx-auto text-lg leading-relaxed font-chinese">
+          <p className="text-gray-700 dark:text-slate-300 max-w-3xl mx-auto text-lg leading-relaxed">
             基于链式时延协议理论，通过<span className="font-semibold text-primary-500">神圣座位原理</span>、
             <span className="font-semibold text-primary-500">下必为例原理</span>和
             <span className="font-semibold text-primary-500">线性时延原理</span>，
@@ -204,7 +201,7 @@ export const Dashboard: React.FC<DashboardProps> = React.memo(({
               <div className="w-24 h-24 rounded-3xl gradient-primary flex items-center justify-center mx-auto mb-8 shadow-2xl">
                 <i className="fas fa-link text-white text-2xl"></i>
               </div>
-              <h2 className="text-3xl font-bold font-chinese text-gray-900 dark:text-slate-100 mb-4">
+              <h2 className="text-3xl font-bold text-gray-900 dark:text-slate-100 mb-4">
                 创建你的第一条链
               </h2>
               <p className="text-gray-700 dark:text-slate-300 mb-8 leading-relaxed">

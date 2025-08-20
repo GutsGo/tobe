@@ -1,4 +1,4 @@
-# Momentum 项目部署指南
+# Topguys 项目部署指南
 
 ## 🚀 快速部署
 
@@ -43,10 +43,10 @@
 
 ## 📋 项目信息
 
-- **项目名称**: momentumctdp
-- **生产环境URL**: https://momentumctdp.netlify.app
-- **管理面板**: https://app.netlify.com/projects/momentumctdp
-- **GitHub仓库**: https://github.com/KenXiao1/momentum
+- **项目名称**: topguysctdp
+- **生产环境URL**: https://topguysctdp.netlify.app
+- **管理面板**: https://app.netlify.com/projects/topguysctdp
+- **GitHub仓库**: https://github.com/KenXiao1/topguys
 
 ## ⚙️ 环境变量
 
@@ -104,4 +104,4 @@
 
 如有问题，请联系：
 - 邮箱: kenx@andrew.cmu.edu
-- GitHub: https://github.com/KenXiao1/momentum
+- GitHub: https://github.com/KenXiao1/topguys

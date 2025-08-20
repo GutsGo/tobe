@@ -380,7 +380,7 @@ export const ImportExportModal: React.FC<ImportExportModalProps> = ({
               </div>
               <div className="flex items-center space-x-2 text-yellow-600 dark:text-yellow-400">
                 <AlertCircle size={16} />
-                <span className="text-sm font-chinese">请确保导入的是从Momentum导出的有效JSON文件</span>
+                <span className="text-sm font-chinese">请确保导入的是从Topguys导出的有效JSON文件</span>
               </div>
             </div>
 
@@ -405,7 +405,7 @@ export const ImportExportModal: React.FC<ImportExportModalProps> = ({
               <textarea
                 value={importData}
                 onChange={(e) => setImportData(e.target.value)}
-                placeholder="粘贴从Momentum导出的JSON数据..."
+                placeholder="粘贴从Topguys导出的JSON数据..."
                 className="w-full bg-gray-50 dark:bg-slate-700 border border-gray-200 dark:border-slate-600 rounded-2xl px-4 py-3 text-gray-900 dark:text-slate-100 placeholder-gray-400 dark:placeholder-slate-400 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all duration-300 resize-none font-mono text-sm"
                 rows={8}
               />
