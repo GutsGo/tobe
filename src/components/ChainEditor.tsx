@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Chain, ChainType } from '../types';
-import { ArrowLeft, Save, Headphones, Code, BookOpen, Dumbbell, Coffee, Target, Clock, Bell, Tag, Layers, Flame, Calendar, AlignLeft } from 'lucide-react';
+import { ArrowLeft, Save, Headphones, Code, BookOpen, Dumbbell, Coffee, Target, Clock, Bell, Tag, Layers, Flame, Calendar, AlignLeft, Loader2 } from 'lucide-react';
 import { PureDOMSlider } from './PureDOMSlider';
 import { ResponsiveContainer } from './ResponsiveContainer';
 import { SettingSection } from './SettingSection';
@@ -70,8 +70,11 @@ export const ChainEditor: React.FC<ChainEditorProps> = ({
     chain?.auxiliaryCompletionTrigger || ''
   );
 
+  // Loading state for save button
+  const [isSaving, setIsSaving] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     console.log('ChainEditor - Submitting form');
@@ -125,7 +128,16 @@ export const ChainEditor: React.FC<ChainEditorProps> = ({
       console.log('ChainEditor - 原始链条数据:', chain);
     }
     
-    onSave(chainData);
+    // Set loading state
+    setIsSaving(true);
+    
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 5000));
+      await onSave(chainData);
+    } finally {
+      // Reset loading state after save completes (success or error)
+      setIsSaving(false);
+    }
   };
 
   const handleTriggerSelect = (triggerText: string) => {
@@ -601,10 +613,20 @@ export const ChainEditor: React.FC<ChainEditorProps> = ({
             </button>
             <button
               type="submit"
-              className={`mobile-touch-target flex-1 gradient-primary hover:shadow-xl text-white px-8 py-4 rounded-2xl font-medium transition-all duration-300 flex items-center justify-center space-x-3 ${mobileInfo.touchSupport ? 'active:scale-98' : 'hover:scale-105'} shadow-lg font-chinese ${mobileInfo.isMobile ? 'min-h-[48px] text-base' : ''}`}
+              disabled={isSaving}
+              className={`mobile-touch-target flex-1 gradient-primary hover:shadow-xl text-white px-8 py-4 rounded-2xl font-medium transition-all duration-300 flex items-center justify-center space-x-3 ${mobileInfo.touchSupport ? 'active:scale-98' : 'hover:scale-105'} shadow-lg font-chinese ${mobileInfo.isMobile ? 'min-h-[48px] text-base' : ''} ${isSaving ? 'opacity-70 cursor-not-allowed' : ''}`}
             >
-              <Save size={20} />
-              <span>{isEditing ? '保存更改' : '创建链条'}</span>
+              {isSaving ? (
+                <>
+                  <Loader2 size={20} className="animate-spin" />
+                  <span>{isEditing ? '保存中...' : '创建中...'}</span>
+                </>
+              ) : (
+                <>
+                  <Save size={20} />
+                  <span>{isEditing ? '保存更改' : '创建链条'}</span>
+                </>
+              )}
             </button>
           </div>
         </form>
