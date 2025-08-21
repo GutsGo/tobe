@@ -8,7 +8,7 @@ import { VirtualizedChainList } from './VirtualizedChainList';
 import { buildChainTree, getTopLevelChains } from '../utils/chainTree';
 import { queryOptimizer } from '../utils/queryOptimizer';
 import { getNextUnitInGroup } from '../utils/chainTree';
-import { Download, TreePine, Trash2 } from 'lucide-react';
+import { Download, TreePine, Trash2, LoaderPinwheel } from 'lucide-react';
 import { NotificationToggle } from './NotificationToggle';
 import { RecycleBinModal } from './RecycleBinModal';
 import { RecycleBinService } from '../services/RecycleBinService';
@@ -162,17 +162,17 @@ export const Dashboard: React.FC<DashboardProps> = React.memo(({
         
         <header className="text-center mb-16 animate-fade-in">
           <div className="flex items-center justify-center space-x-4 mb-6">
-            <div className="w-16 h-16 rounded-3xl gradient-primary flex items-center justify-center shadow-xl">
-              <i className="fas fa-rocket text-white text-xl"></i>
+            <div className="w-16 h-16 rounded-3xl flex items-center justify-center shadow-xl">
+              <img src="/tobe.webp" alt="logo"/>
             </div>
             <div>
-              <h1 className="text-5xl md:text-6xl font-bold font-chinese text-gray-900 dark:text-slate-100">
-                🆃🅾🅱🅴
+              <h1 className="text-3xl md:text-6xl font-bold font-beauty text-gray-900 dark:text-slate-100">
+                ToBE
               </h1>
             </div>
           </div>
           
-          <p className="text-gray-700 dark:text-slate-300 max-w-3xl mx-auto text-lg leading-relaxed">
+          <p className="text-gray-700 dark:text-slate-300 max-w-4xl mx-auto text-md leading-relaxed">
             基于链式时延协议理论，通过<span className="font-semibold text-primary-500">神圣座位原理</span>、
             <span className="font-semibold text-primary-500">下必为例原理</span>和
             <span className="font-semibold text-primary-500">线性时延原理</span>，
@@ -184,7 +184,7 @@ export const Dashboard: React.FC<DashboardProps> = React.memo(({
           <div className="text-center py-20 animate-slide-up">
             <div className="bento-card max-w-lg mx-auto">
               <div className="w-24 h-24 rounded-3xl gradient-primary flex items-center justify-center mx-auto mb-8 shadow-2xl">
-                <div className="w-8 h-8 border-3 border-white/30 border-t-white rounded-full animate-spin"></div>
+                <LoaderPinwheel className="text-white animate-spin" size={28} />
               </div>
               <h2 className="text-3xl font-bold font-chinese text-gray-900 dark:text-slate-100 mb-4">
                 正在加载任务链...
@@ -199,9 +199,9 @@ export const Dashboard: React.FC<DashboardProps> = React.memo(({
           <div className="text-center py-20 animate-slide-up">
             <div className="bento-card max-w-lg mx-auto">
               <div className="w-24 h-24 rounded-3xl gradient-primary flex items-center justify-center mx-auto mb-8 shadow-2xl">
-                <i className="fas fa-link text-white text-2xl"></i>
+                <i className="fas fa-link text-white text-3xl"></i>
               </div>
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-slate-100 mb-4">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-slate-100 mb-4">
                 创建你的第一条链
               </h2>
               <p className="text-gray-700 dark:text-slate-300 mb-8 leading-relaxed">

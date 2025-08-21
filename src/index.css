@@ -12,6 +12,11 @@
   transition: none !important;
 }
 
+@font-face {
+  font-family: 'MaokenAssortedSans';
+  src: url('/MaokenAssortedSans.ttf') format('opentype');
+}
+
 @layer base {
   * {
     @apply antialiased;
@@ -29,6 +34,11 @@
   
   .font-chinese {
     font-family: system-ui, sans-serif;
+  }
+
+  .font-beauty {
+    font-family: 'MaokenAssortedSans';
+    letter-spacing: 0.1em;
   }
   
   /* High contrast colors for accessibility */

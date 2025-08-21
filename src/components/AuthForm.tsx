@@ -35,22 +35,19 @@ export const AuthForm: React.FC = () => {
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-12">
-          <div className="w-20 h-20 rounded-3xl gradient-primary flex items-center justify-center mx-auto mb-6 shadow-2xl">
-            <i className="fas fa-rocket text-white text-2xl"></i>
+          <div className="w-24 h-24 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
+            <img src="/tobe.webp" alt="logo"/>
           </div>
-          <h1 className="text-5xl font-bold font-chinese text-gray-900 dark:text-slate-100 mb-2">
-            🆃🅾🅱🅴
+          <h1 className="text-5xl font-bold font-beauty text-gray-900 dark:text-slate-100 mb-2">
+            ToBE
           </h1>
-          <p className="text-gray-600 dark:text-slate-400 font-mono text-sm tracking-wider">
-            CTDP PROTOCOL
-          </p>
         </div>
 
         {/* Auth Form */}
         <div className="bento-card">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold font-chinese text-gray-900 dark:text-slate-100 mb-2">
-              {isSignUp ? '创建账户' : '登录账户'}
+              {isSignUp ? '创建' : '登录'}
             </h2>
             <p className="text-gray-600 dark:text-slate-400 text-sm">
               {isSignUp ? '开始你的专注之旅' : '继续你的专注之旅'}
@@ -70,7 +67,7 @@ export const AuthForm: React.FC = () => {
             {/* Email */}
             <div>
               <label className="block text-gray-700 dark:text-slate-300 text-sm font-medium mb-3 font-chinese">
-                邮箱地址
+                邮箱
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
