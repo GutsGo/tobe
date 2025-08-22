@@ -44,9 +44,8 @@
 ## 📋 项目信息
 
 - **项目名称**: tobectdp
-- **生产环境URL**: https://tobectdp.netlify.app
-- **管理面板**: https://app.netlify.com/projects/tobectdp
-- **GitHub仓库**: https://github.com/KenXiao1/tobe
+- **生产环境URL**: https://tobe.brace.fun
+- **GitHub仓库**: https://github.com/GutsGo/tobe
 
 ## ⚙️ 环境变量
 
@@ -103,5 +102,4 @@
 ## 📞 支持
 
 如有问题，请联系：
-- 邮箱: kenx@andrew.cmu.edu
-- GitHub: https://github.com/KenXiao1/tobe
+- GitHub: https://github.com/GutsGo/tobe

@@ -49,7 +49,7 @@ This principle overcomes the difficulty of getting started by using a "pre-commi
 <img width="911" height="890" alt="image" src="https://github.com/user-attachments/assets/247aec14-ec69-4fc7-aa14-112632814ca8" />
 
 ## Use It Directly
-https://tobectdp.netlify.app/
+https://tobe.brace.fun/
 <img width="1806" height="1218" alt="image" src="https://github.com/user-attachments/assets/6dcd2b1b-3cc8-4cc1-8e8c-57a2f97b1878" />
 
 
@@ -156,6 +156,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Contact
 
-If you have any questions or suggestions, please send an email to: kenx@andrew.cmu.edu
 <br>
 My Zhihu Account: https://www.zhihu.com/people/blues-68-53

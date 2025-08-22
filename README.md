@@ -49,7 +49,7 @@ $I = \int_{0}^{\infty} V(\tau) \cdot W(\tau) d\tau$
 - 利用时间延迟降低启动阻力<img width="911" height="890" alt="image" src="https://github.com/user-attachments/assets/247aec14-ec69-4fc7-aa14-112632814ca8" />
 
 ## 直接使用
-https://tobectdp.netlify.app/
+https://tobe.brace.fun/
 <img width="1806" height="1218" alt="image" src="https://github.com/user-attachments/assets/6dcd2b1b-3cc8-4cc1-8e8c-57a2f97b1878" />
 
 
@@ -151,6 +151,5 @@ npm run preview
 
 ## 📞 联系方式
 
-如有问题或建议，发送邮件至：kenx@andrew.cmu.edu
 <br>
 我的知乎账号：https://www.zhihu.com/people/blues-68-53
