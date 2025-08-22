@@ -39,24 +39,26 @@ export const ChainDetail: React.FC<ChainDetailProps> = ({
               <ArrowLeft size={24} />
             </button>
             <div>
-              <h1 className="text-4xl md:text-5xl font-bold font-chinese text-[#161615] dark:text-slate-100 mb-2">{chain.name}</h1>
-              <p className="text-sm font-mono text-gray-500 tracking-wider uppercase">CHAIN DETAILS</p>
+              <h1 className="text-xl sm:text-3xl md:text-4xl font-bold font-chinese text-[#161615] dark:text-slate-100 mb-2">{chain.name}</h1>
+              <p className="text-xs sm:text-sm font-mono text-gray-500 tracking-wider uppercase">CHAIN DETAILS</p>
             </div>
           </div>
           <div className="flex space-x-3">
             <button
               onClick={onEdit}
               className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-2xl font-medium transition-all duration-300 flex items-center space-x-2 hover:scale-105 shadow-lg font-chinese"
+              title="编辑链条"
             >
               <Edit size={16} />
-              <span>编辑链条</span>
+              <span className="hidden sm:inline">编辑链条</span>
             </button>
             <button
               onClick={() => setShowDeleteConfirm(true)}
               className="bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-2xl font-medium transition-all duration-300 flex items-center space-x-2 hover:scale-105 shadow-lg font-chinese"
+              title="删除"
             >
               <Trash2 size={16} />
-              <span>删除</span>
+              <span className="hidden sm:inline">删除</span>
             </button>
           </div>
         </header>
@@ -72,7 +74,7 @@ export const ChainDetail: React.FC<ChainDetailProps> = ({
                     <Flame size={32} />
                   </div>
                   <div className="text-left">
-                    <span className="text-5xl font-bold font-mono">#{chain.currentStreak}</span>
+                    <span className="text-4xl font-bold font-mono">#{chain.currentStreak}</span>
                     <p className="text-gray-500 text-sm font-chinese">主链当前记录</p>
                   </div>
                 </div>

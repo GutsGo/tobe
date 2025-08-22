@@ -172,7 +172,7 @@ export const RSIPView: React.FC<RSIPViewProps> = ({ nodes, meta, onBack, onSaveN
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 p-4 md:p-6">
       <div className="max-w-6xl mx-auto">
-        <header className="flex items-center justify-between mb-8">
+        <header className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4 sm:mb-8">
           <div className="flex items-center space-x-3">
             <button onClick={onBack} className="p-3 text-gray-400 hover:text-gray-700 dark:hover:text-slate-200 rounded-2xl hover:bg-white/60 dark:hover:bg-slate-800/60">
               <ArrowLeft size={22} />
@@ -183,8 +183,8 @@ export const RSIPView: React.FC<RSIPViewProps> = ({ nodes, meta, onBack, onSaveN
             </div>
           </div>
           {/* Daily policy toggle */}
-          <div className="flex items-center space-x-3">
-            <span className="text-xs font-chinese text-gray-600 dark:text-slate-400">一天可多条</span>
+          <div className="flex items-center space-x-3 px-4 sm:px-0 justify-between sm:justify-end">
+            <span className="text-xs font-chinese text-gray-600 dark:text-slate-400 whitespace-nowrap">一天可多条</span>
             <label className="relative inline-flex items-center cursor-pointer">
               <input
                 type="checkbox"
@@ -272,14 +272,14 @@ export const RSIPView: React.FC<RSIPViewProps> = ({ nodes, meta, onBack, onSaveN
               />
             </div>
           </div>
-          <div className="mt-4 flex items-center justify-between">
+          <div className="mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div className="text-sm font-chinese text-gray-600 dark:text-slate-400">
               每天最多新增一个国策。{canAddToday ? '今日可新增。' : '今日已新增，明日继续。'}
             </div>
             <button
               onClick={handleAdd}
               disabled={!canAddToday || !title.trim() || !rule.trim()}
-              className={`flex items-center space-x-2 px-6 py-3 rounded-2xl font-medium transition-all duration-300 shadow-lg ${(!canAddToday || !title.trim() || !rule.trim()) ? 'bg-gray-200 dark:bg-slate-700 text-gray-400 dark:text-slate-500' : 'gradient-primary text-white hover:shadow-xl hover:scale-105'}`}
+              className={`w-full sm:w-auto flex items-center justify-center space-x-2 px-6 py-3 rounded-2xl font-medium transition-all duration-300 shadow-lg ${(!canAddToday || !title.trim() || !rule.trim()) ? 'bg-gray-200 dark:bg-slate-700 text-gray-400 dark:text-slate-500' : 'gradient-primary text-white hover:shadow-xl hover:scale-105'}`}
             >
               <Plus size={18} />
               <span className="font-chinese">新增国策</span>

@@ -1,13 +1,10 @@
 import React, { useMemo, useCallback, useEffect, useState } from 'react';
 import { Chain, ScheduledSession, CompletionHistory, ChainTreeNode } from '../types';
-import { ChainCard } from './ChainCard';
-import { GroupCard } from './GroupCard';
 import { ThemeToggle } from './ThemeToggle';
 import { ImportExportModal } from './ImportExportModal';
 import { VirtualizedChainList } from './VirtualizedChainList';
-import { buildChainTree, getTopLevelChains } from '../utils/chainTree';
+import {  getTopLevelChains } from '../utils/chainTree';
 import { queryOptimizer } from '../utils/queryOptimizer';
-import { getNextUnitInGroup } from '../utils/chainTree';
 import { Download, TreePine, Trash2, LoaderPinwheel } from 'lucide-react';
 import { NotificationToggle } from './NotificationToggle';
 import { RecycleBinModal } from './RecycleBinModal';
@@ -64,11 +61,38 @@ export const Dashboard: React.FC<DashboardProps> = React.memo(({
   const [showAccountModal, setShowAccountModal] = useState(false);
   const [showPerformanceMonitor, setShowPerformanceMonitor] = useState(process.env.NODE_ENV === 'development');
   const [recycleBinCount, setRecycleBinCount] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   
   // Only log in development mode to improve production performance
   if (process.env.NODE_ENV === 'development') {
     console.log('Dashboard - Received chains:', chains.length, chains.map(c => ({ id: c.id, name: c.name, type: c.type, parentId: c.parentId })));
   }
+  
+  // Check if mobile screen with debounce
+  useEffect(() => {
+    let resizeTimer: NodeJS.Timeout;
+    
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 640); // Tailwind's sm breakpoint
+    };
+    
+    const debouncedCheckIsMobile = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(checkIsMobile, 250); // 250ms debounce
+    };
+    
+    // Initial check
+    checkIsMobile();
+    
+    // Add event listener
+    window.addEventListener('resize', debouncedCheckIsMobile);
+    
+    // Cleanup
+    return () => {
+      clearTimeout(resizeTimer);
+      window.removeEventListener('resize', debouncedCheckIsMobile);
+    };
+  }, []);
   
   // Optimize chain tree building with deep memoization
   const chainTree = useMemo(() => {
@@ -145,7 +169,7 @@ export const Dashboard: React.FC<DashboardProps> = React.memo(({
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 p-4 md:p-6">
       <div className="max-w-7xl mx-auto">
         {/* Theme toggle in header */}
-        <div className="flex justify-end items-center space-x-4 mb-6">
+        <div className="flex items-center mb-6">
           {isSupabaseConfigured && (
             <button
               onClick={handleShowAccountModal}
@@ -153,11 +177,13 @@ export const Dashboard: React.FC<DashboardProps> = React.memo(({
               title="账号管理"
             >
               <User size={18} />
-              <span className="font-chinese text-sm">账号</span>
+              <span className="font-chinese text-sm hidden sm:inline">账号</span>
             </button>
           )}
-          <NotificationToggle />
-          <ThemeToggle variant="dropdown" showLabel />
+          <div className="flex-1 flex justify-end items-center space-x-4">
+            <NotificationToggle />
+            <ThemeToggle variant="dropdown" showLabel={!isMobile} />
+          </div>
         </div>
         
         <header className="text-center mb-16 animate-fade-in">
@@ -227,7 +253,7 @@ export const Dashboard: React.FC<DashboardProps> = React.memo(({
           </div>
         ) : (
           <div className="animate-slide-up">
-            <div className="flex justify-between items-center mb-12">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
               <div>
                 <h2 className="text-3xl font-bold font-chinese text-gray-900 dark:text-slate-100 mb-2">
                   你的任务链
@@ -236,14 +262,14 @@ export const Dashboard: React.FC<DashboardProps> = React.memo(({
                   YOUR TASK CHAINS
                 </p>
               </div>
-              <div className="flex items-center space-x-3">
+              <div className="flex flex-wrap items-center gap-2 w-full md:w-auto justify-start md:justify-end">
                 <button
                   onClick={handleShowRecycleBin}
                   className="relative bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-700 dark:text-slate-200 px-4 py-3 rounded-2xl font-medium transition-all duration-300 flex items-center space-x-2 hover:scale-105 shadow-lg"
                   title="回收箱"
                 >
                   <Trash2 size={16} />
-                  <span className="font-chinese font-medium">回收箱</span>
+                  <span className="font-chinese font-medium hidden sm:inline">回收箱</span>
                   {recycleBinCount > 0 && (
                     <span className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white text-xs rounded-full flex items-center justify-center font-bold">
                       {recycleBinCount > 99 ? '99+' : recycleBinCount}
@@ -253,9 +279,10 @@ export const Dashboard: React.FC<DashboardProps> = React.memo(({
                 <button
                   onClick={handleShowImportExport}
                   className="bg-gray-100 dark:bg-slate-700 hover:bg-gray-200 dark:hover:bg-slate-600 text-gray-700 dark:text-slate-200 px-4 py-3 rounded-2xl font-medium transition-all duration-300 flex items-center space-x-2 hover:scale-105 shadow-lg"
+                  title="数据管理"
                 >
                   <Download size={16} />
-                  <span className="font-chinese font-medium">数据管理</span>
+                  <span className="font-chinese font-medium hidden sm:inline">数据管理</span>
                 </button>
                 <button
                   onClick={onOpenRSIP}
@@ -263,22 +290,22 @@ export const Dashboard: React.FC<DashboardProps> = React.memo(({
                   title="国策树（RSIP）"
                 >
                   <TreePine size={16} />
-                  <span className="font-chinese font-medium">国策树</span>
+                  <span className="font-chinese font-medium hidden sm:inline">国策树</span>
                 </button>
                 <button
                   onClick={onCreateChain}
-                  className="gradient-dark hover:shadow-xl text-white px-6 py-3 rounded-2xl font-medium transition-all duration-300 flex items-center space-x-2 hover:scale-105 shadow-lg"
+                  className="gradient-dark hover:shadow-xl text-white px-6 py-3 rounded-2xl font-medium transition-all duration-300 flex items-center space-x-2 hover:scale-105 shadow-lg whitespace-nowrap"
                 >
                   <i className="fas fa-plus"></i>
-                  <span className="font-chinese font-medium">新建链</span>
+                  <span className="font-chinese font-medium hidden sm:inline">新建链</span>
                 </button>
                 {onCreateTaskGroup && (
                   <button
                     onClick={onCreateTaskGroup}
-                    className="bg-green-500 hover:bg-green-600 hover:shadow-xl text-white px-6 py-3 rounded-2xl font-medium transition-all duration-300 flex items-center space-x-2 hover:scale-105 shadow-lg"
+                    className="bg-green-500 hover:bg-green-600 hover:shadow-xl text-white px-6 py-3 rounded-2xl font-medium transition-all duration-300 flex items-center space-x-2 hover:scale-105 shadow-lg whitespace-nowrap"
                   >
                     <i className="fas fa-layer-group"></i>
-                    <span className="font-chinese font-medium">新建任务群</span>
+                    <span className="font-chinese font-medium hidden sm:inline">新建任务群</span>
                   </button>
                 )}
               </div>

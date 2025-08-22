@@ -49,7 +49,7 @@ export const PerformanceMonitor: React.FC<{
     return (
       <button
         onClick={onToggle}
-        className="fixed bottom-4 right-4 bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-full shadow-lg z-50"
+        className="fixed bottom-4 right-4 w-10 h-10 bg-blue-300 hover:bg-blue-400 text-white p-2 rounded-full shadow-lg z-50"
         title="Show Performance Monitor"
       >
         📊
