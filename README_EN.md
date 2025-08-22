@@ -137,24 +137,3 @@ npm run preview
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## TO DO
-
-- [ ] **Add chainable nested work units**
- <br> *Diagrams:*
-<br>
-  <img width="600" alt="Nested unit example 1" src="https://github.com/user-attachments/assets/39522b04-f284-449b-80d5-21434862f3ee" />
-  <img width="600" alt="Nested unit example 2" src="https://github.com/user-attachments/assets/f54b2816-9869-46bf-8714-bdaee0c6423e" />
-
-- [ ] **Add out-of-the-box presets**
-  - e.g., Presets for exam weeks.
-
-- [ ] **Implement an improved version to prevent daily procrastination (Recursive Steady-state Iteration Protocol, RSIP)**
-  *Design Diagram:*
-  <img width="700" alt="RSIP design diagram" src="https://github.com/user-attachments/assets/29b5274a-e207-476a-ba31-e45affb73bb6" />
-
-
-## 📞 Contact
-
-<br>
-My Zhihu Account: https://www.zhihu.com/people/blues-68-53

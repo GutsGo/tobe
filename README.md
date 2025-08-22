@@ -133,23 +133,3 @@ npm run preview
 ## 📄 许可证
 
 本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情。
-
-## TO DO
-
-- [ ] **增加链式可嵌套工作单元**
-  *示意图：*
-  <img width="600" alt="嵌套单元示例1" src="https://github.com/user-attachments/assets/39522b04-f284-449b-80d5-21434862f3ee" />
-  <img width="600" alt="嵌套单元示例2" src="https://github.com/user-attachments/assets/f54b2816-9869-46bf-8714-bdaee0c6423e" />
-
-- [ ] **增加开箱即用的预设**
-  - 如：考试周专用等
-
-- [ ] **防止日常摆烂的改进版本（递归稳态迭代协议, RSIP）实现**
-  *示意图：*
-  <img width="700" alt="RSIP 设计图" src="https://github.com/user-attachments/assets/29b5274a-e207-476a-ba31-e45affb73bb6" />
-
-
-## 📞 联系方式
-
-<br>
-我的知乎账号：https://www.zhihu.com/people/blues-68-53
